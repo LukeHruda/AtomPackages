@@ -1,0 +1,38 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Toggle template-pack",
+        "command": "template-pack:toggle"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "template-pack",
+          "submenu": [
+            {
+              "label": "C",
+              "command": "template-pack:cLang"
+            },
+            {
+              "label": "C++",
+              "command": "template-pack:cpp"
+            },
+            {
+              "label": "C#",
+              "command": "template-pack:cSharp"
+            },
+            {
+              "label": "Java",
+              "command": "template-pack:java"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
