@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Toggle sorting",
+        "command": "sorting:quickSort"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "sorting",
+          "submenu": [
+            {
+              "label": "Quick Sort",
+              "command": "sorting:quickSort"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
