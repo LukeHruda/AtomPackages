@@ -15,58 +15,126 @@ describe('TemplatePack', () => {
     activationPromise = atom.packages.activatePackage('template-pack');
   });
 
-  describe('when the template-pack:toggle event is triggered', () => {
-    it('hides and shows the modal panel', () => {
+  describe('when the template-pack:java event is triggered', () => {
+    it('File Exists', () => {
       // Before the activation event the view is not on the DOM, and no panel
       // has been created
-      expect(workspaceElement.querySelector('.template-pack')).not.toExist();
-
       // This is an activation event, triggering it will cause the package to be
       // activated.
-      atom.commands.dispatch(workspaceElement, 'template-pack:toggle');
-
-      waitsForPromise(() => {
-        return activationPromise;
-      });
+      atom.commands.dispatch(workspaceElement, 'template-pack:java');
 
       runs(() => {
-        expect(workspaceElement.querySelector('.template-pack')).toExist();
-
-        let templatePackElement = workspaceElement.querySelector('.template-pack');
-        expect(templatePackElement).toExist();
-
-        let templatePackPanel = atom.workspace.panelForItem(templatePackElement);
-        expect(templatePackPanel.isVisible()).toBe(true);
-        atom.commands.dispatch(workspaceElement, 'template-pack:toggle');
-        expect(templatePackPanel.isVisible()).toBe(false);
+        const fs = require('fs');
+        expect(fs.existsSync('C:\\Users\\100654666\\github\\template-pack\\Java.txt'));
       });
     });
+  });
 
-    it('hides and shows the view', () => {
-      // This test shows you an integration test testing at the view level.
-
-      // Attaching the workspaceElement to the DOM is required to allow the
-      // `toBeVisible()` matchers to work. Anything testing visibility or focus
-      // requires that the workspaceElement is on the DOM. Tests that attach the
-      // workspaceElement to the DOM are generally slower than those off DOM.
-      jasmine.attachToDOM(workspaceElement);
-
-      expect(workspaceElement.querySelector('.template-pack')).not.toExist();
-
-      // This is an activation event, triggering it causes the package to be
+  describe('when the template-pack:java event is triggered', () => {
+    it('Loads the Correct file', () => {
+      // Before the activation event the view is not on the DOM, and no panel
+      // has been created
+      // This is an activation event, triggering it will cause the package to be
       // activated.
-      atom.commands.dispatch(workspaceElement, 'template-pack:toggle');
-
-      waitsForPromise(() => {
-        return activationPromise;
-      });
+      atom.commands.dispatch(workspaceElement, 'template-pack:java');
 
       runs(() => {
-        // Now we can test for view visibility
-        let templatePackElement = workspaceElement.querySelector('.template-pack');
-        expect(templatePackElement).toBeVisible();
-        atom.commands.dispatch(workspaceElement, 'template-pack:toggle');
-        expect(templatePackElement).not.toBeVisible();
+        const fs = require('fs');
+        let dir4 = 'C:\\Users\\100654666\\github\\template-pack\\Java.txt';
+        expect(dir4 == 'C:\\Users\\100654666\\github\\template-pack\\Java.txt');
+      });
+    });
+  });
+
+  describe('when the template-pack:cLang event is triggered', () => {
+    it('File Exists', () => {
+      // Before the activation event the view is not on the DOM, and no panel
+      // has been created
+      // This is an activation event, triggering it will cause the package to be
+      // activated.
+      atom.commands.dispatch(workspaceElement, 'template-pack:cLang');
+
+      runs(() => {
+        const fs = require('fs');
+        expect(fs.existsSync('C:\\Users\\100654666\\github\\template-pack\\cLang.txt'));
+      });
+    });
+  });
+
+  describe('when the template-pack:cLang event is triggered', () => {
+    it('Loads the Correct file', () => {
+      // Before the activation event the view is not on the DOM, and no panel
+      // has been created
+      // This is an activation event, triggering it will cause the package to be
+      // activated.
+      atom.commands.dispatch(workspaceElement, 'template-pack:cLang');
+
+      runs(() => {
+        const fs = require('fs');
+        let dir = 'C:\\Users\\100654666\\github\\template-pack\\cLang.txt';
+        expect(dir == 'C:\\Users\\100654666\\github\\template-pack\\cLang.txt');
+      });
+    });
+  });
+
+  describe('when the template-pack:cpp event is triggered', () => {
+    it('File Exists', () => {
+      // Before the activation event the view is not on the DOM, and no panel
+      // has been created
+      // This is an activation event, triggering it will cause the package to be
+      // activated.
+      atom.commands.dispatch(workspaceElement, 'template-pack:cpp');
+
+      runs(() => {
+        const fs = require('fs');
+        expect(fs.existsSync('C:\\Users\\100654666\\github\\template-pack\\cpp.txt'));
+      });
+    });
+  });
+
+  describe('when the template-pack:cpp event is triggered', () => {
+    it('Loads the Correct file', () => {
+      // Before the activation event the view is not on the DOM, and no panel
+      // has been created
+      // This is an activation event, triggering it will cause the package to be
+      // activated.
+      atom.commands.dispatch(workspaceElement, 'template-pack:cpp');
+
+      runs(() => {
+        const fs = require('fs');
+        let dir = 'C:\\Users\\100654666\\github\\template-pack\\cpp.txt';
+        expect(dir == 'C:\\Users\\100654666\\github\\template-pack\\cpp.txt');
+      });
+    });
+  });
+
+  describe('when the template-pack:c# event is triggered', () => {
+    it('File Exists', () => {
+      // Before the activation event the view is not on the DOM, and no panel
+      // has been created
+      // This is an activation event, triggering it will cause the package to be
+      // activated.
+      atom.commands.dispatch(workspaceElement, 'template-pack:c#');
+
+      runs(() => {
+        const fs = require('fs');
+        expect(fs.existsSync('C:\\Users\\100654666\\github\\template-pack\\c#.txt'));
+      });
+    });
+  });
+
+  describe('when the template-pack:cSharp event is triggered', () => {
+    it('Loads the Correct file', () => {
+      // Before the activation event the view is not on the DOM, and no panel
+      // has been created
+      // This is an activation event, triggering it will cause the package to be
+      // activated.
+      atom.commands.dispatch(workspaceElement, 'template-pack:c#');
+
+      runs(() => {
+        const fs = require('fs');
+        let dir = 'C:\\Users\\100654666\\github\\template-pack\\c#.txt';
+        expect(dir == 'C:\\Users\\100654666\\github\\template-pack\\c#.txt');
       });
     });
   });
